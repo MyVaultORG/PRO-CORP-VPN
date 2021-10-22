@@ -17,12 +17,12 @@ function dcvpn2() {
 }
 
 case "$1" in
-    vpn1)   vpn1 ;;
-    dcvpn1)    dcvpn1 ;;
-    vpn2)   vpn2 ;;
-    dcvpn2)    dcvpn2 ;;
-    rvpn1) dcvpn1; sleep 2; vpn1 ;;
-    rvpn2) dcvpn2; sleep 2; vpn2 ;;
+    vpn1)   vpn1 ;; # connect vpn1
+    dcvpn1)    dcvpn1 ;; # disconnect vpn1
+    vpn2)   vpn2 ;; # connect vpn2
+    dcvpn2)    dcvpn2 ;; # disconnect vpn2
+    rvpn1) dcvpn1; sleep 2; vpn1 ;; # reconnect vpn1
+    rvpn2) dcvpn2; sleep 2; vpn2 ;;# reconnect vpn2
     *) echo "usage: $0 vpn1|dcvpn1|vpn2|dcvpn2|rvpn1|rvpn2" >&2
        exit 1
        ;;
